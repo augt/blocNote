@@ -11,7 +11,7 @@ function Header(props) {
 
   return (
     <header>
-      <img src="../img/logo.png" alt="Logo de Groupomania" />
+      <h1>blocNote</h1>
       <nav>
         <ul className="navigation__list">
           <li>

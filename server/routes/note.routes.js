@@ -2,21 +2,20 @@ const express = require("express");
 const router = express.Router();
 const noteCtrl = require("../controllers/note.controllers");
 
-//const auth = require("../middlewares/auth.middlewares");
-
-//router.get("/"/* , auth */, commentCtrl.getAllNotes);
-//router.post("/"/* , auth */, commentCtrl.createNote);
-/* router.put(
+const auth = require("../middlewares/auth.middlewares");
+router.get("/", auth , noteCtrl.getAllNotes);
+router.post("/", auth , noteCtrl.createNote);
+router.put(
   "/:id", 
-  //auth ,
-  commentCtrl.checkPreviousNote,
-  commentCtrl.modifyNote
-); */
-/* router.delete(
+  auth ,
+  noteCtrl.checkPreviousNote,
+  noteCtrl.modifyNote
+);
+router.delete(
   "/:id" ,
-  //auth ,
-  commentCtrl.checkPreviousNote,
-  commentCtrl.deleteNote
-); */
+  auth ,
+  noteCtrl.checkPreviousNote,
+  noteCtrl.deleteNote
+);
 
 module.exports = router;

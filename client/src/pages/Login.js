@@ -5,9 +5,9 @@ import Header from "../components/Header";
 function Login() {
   const [isConnected, setIsConnected] = useState(false);
 
-  if (isConnected === true) {
+   if (isConnected === true) {
     window.location.href = "home";
-  }
+  } 
   // login
 
   const [email, setEmail] = useState("");
@@ -24,6 +24,8 @@ function Login() {
         localStorage.setItem("uuid", res.data.uuid);
         setIsConnected(true);
         setApiMessage(res.data.message);
+        console.log(res.data.token);
+        console.log(res.data.uuid);
       })
       .catch((err) => {
         console.log(err);
